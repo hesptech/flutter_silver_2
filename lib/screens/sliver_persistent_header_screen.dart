@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sliver_2/persistent_content_screen.dart';
-import 'package:flutter_sliver_2/persistent_header_screen.dart';
+import 'package:flutter_sliver_2/screens/views/persistent_content_screen.dart';
+import 'package:flutter_sliver_2/screens/views/persistent_header_screen.dart';
 
 class SliverPersistentHeaderScreen extends StatelessWidget {
   const SliverPersistentHeaderScreen({super.key});

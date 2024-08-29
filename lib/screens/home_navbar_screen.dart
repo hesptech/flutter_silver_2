@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sliver_2/home_screen.dart';
+import 'package:flutter_sliver_2/screens/home_screen.dart';
 
 class HomeNavbarScreen extends StatelessWidget {
   const HomeNavbarScreen({super.key});

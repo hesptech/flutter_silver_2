@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sliver_2/custom_bottom_navigation.dart';
-import 'package:flutter_sliver_2/sliver_app_bar_screen.dart';
-import 'package:flutter_sliver_2/sliver_persistent_header_screen.dart';
+import 'package:flutter_sliver_2/screens/sliver_app_bar_screen.dart';
+import 'package:flutter_sliver_2/screens/sliver_persistent_header_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

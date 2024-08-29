@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sliver_2/home_navbar_screen.dart';
-import 'package:flutter_sliver_2/sliver_app_bar_screen.dart';
-import 'package:flutter_sliver_2/sliver_persistent_header_screen.dart';
+import 'package:flutter_sliver_2/screens/home_navbar_screen.dart';
+import 'package:flutter_sliver_2/screens/sliver_app_bar_navbar_screen.dart';
+import 'package:flutter_sliver_2/screens/sliver_persistent_header_screen.dart';
 
 class CustomBottomNavigation extends StatefulWidget {
   const CustomBottomNavigation({super.key});
@@ -21,7 +21,7 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
       body: <Widget>[
         /// Home page
         const HomeNavbarScreen(),
-        const SliverAppBarScreen(),
+        const SliverAppBarNavbarScreen(),
         const SliverPersistentHeaderScreen(),
       ][currentPageIndex],
     
