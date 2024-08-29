@@ -62,7 +62,9 @@ class PersistentHeaderScreen extends SliverPersistentHeaderDelegate {
                 Visibility(
                   visible: true,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
                     child: const Icon(
                       Icons.arrow_back_outlined,
                       color: Colors.white,

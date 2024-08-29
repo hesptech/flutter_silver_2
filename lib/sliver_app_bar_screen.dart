@@ -52,7 +52,12 @@ class SliverAppBarScreen extends StatelessWidget {
                   slivers: [
                     SliverAppBar(
                       pinned: true,
-                      leading: const Icon(Icons.arrow_back_outlined),
+                      leading: IconButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        }, 
+                        icon: const Icon(Icons.arrow_back_outlined),
+                      ),
                       title: const Text('Latte details'),
                       flexibleSpace: Image.asset('assets/images/item_details.jpg', fit: BoxFit.cover,),
                       expandedHeight: 340,
