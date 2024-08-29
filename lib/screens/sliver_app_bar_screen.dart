@@ -62,6 +62,26 @@ class SliverAppBarScreen extends StatelessWidget {
                       flexibleSpace: Image.asset('assets/images/item_details.jpg', fit: BoxFit.cover,),
                       expandedHeight: 340,
                     ),
+
+
+                    SliverFixedExtentList(
+                      itemExtent: 50,
+                      delegate: SliverChildListDelegate([
+                        const Row(
+                          children: [
+                            Text(
+                              "Latte information",
+                              style: TextStyle(
+                                //color: context.colorScheme.onSurface,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                              ),                      
+                            ),
+                          ],
+                        ),
+                      ]),
+                    ),
+
                       
                     SliverList(
                       delegate: SliverChildBuilderDelegate(
