@@ -10,31 +10,61 @@ class PersistentContentScreen extends StatefulWidget {
 
 class _PersistentContentScreenState extends State<PersistentContentScreen> {
 
-
-
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?',
-              style: Theme.of(context).textTheme.headlineSmall,
+
+    List<Map<String,dynamic>> allergens = [
+      { 'txt': 'Cereals containing gluten', 'state': false },
+      { 'txt': 'Crustaceanss', 'state': false },
+      { 'txt': 'Eggs', 'state': false },
+      { 'txt': 'Fish', 'state': false },
+      { 'txt': 'Peanuts', 'state': false },
+      { 'txt': 'Soybeans', 'state': false },
+      { 'txt': 'Milk', 'state': false },
+      { 'txt': 'Nuts', 'state': false },
+      { 'txt': 'Celery', 'state': false },
+      { 'txt': 'Mustard', 'state': false },
+      { 'txt': 'Sesame seeds', 'state': false }, 
+      { 'txt': 'Sulphur', 'state': false },
+      { 'txt': 'state dioxide and sulphites', 'state': false }, 
+      { 'txt': 'Lupin', 'state': false }, 
+      { 'txt': 'Molluscs', 'state': false },
+    ];
+
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (context, index) {
+          return Container(
+            height: 100,
+            alignment: Alignment.center,
+            color: Colors.orange[100 * (index % 9)],
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Checkbox(
+                  value: false,
+                  fillColor: MaterialStateProperty.resolveWith((states) {
+                    // If the button is pressed, return green, otherwise blue
+                    if (states.contains(MaterialState.pressed)) {
+                      return Colors.green;
+                    }
+                    return Colors.blue;
+                  }),
+                  checkColor: Colors.amber,
+                  side: const BorderSide(
+                    color: Color(0xFF017AFE),
+                    width: 2,
+                  ),
+                  onChanged: (value){},
+                ),                              
+                Expanded(child: Text(allergens[index]['txt'])),
+              ],
             ),
-    
-          ],
-        ),
+          );
+        },
+        childCount: allergens.length,
       ),
     );
   }
 }
-
-
